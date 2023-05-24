@@ -47,6 +47,20 @@ class App(CTk.CTk):
                                         onvalue=ascii_uppercase, offvalue="")
         self.cb_upper.grid(row=2, column=2)
 
+        self.cb_symbol_var = tkinter.StringVar()
+        self.cb_symbol = CTk.CTkCheckBox(master=self.setting_frame, text=("@#$%"), variable=self.cb_symbol_var,
+                                         onvalue=punctuation, offvalue="")
+
+        self.cb_symbol.grid(row=2, column=3)
+
+        self.appearance_mode_option_menu = CTk.CTkOptionMenu(master=self.setting_frame,
+                                                             values=["Light", "Dark", "System"],
+                                                             command=self.change_appearance_mode_event)
+        self.appearance_mode_option_menu.grid(row=3, column=0, columnspan=4, pady=(10, 10))
+
+    def change_appearance_mode_event(self, new_appearance_mode):
+        CTk.set_appearance_mode(new_appearance_mode)
+
 
 
     def slider_event(self):
