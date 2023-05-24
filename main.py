@@ -61,10 +61,9 @@ class App(CTk.CTk):
     def change_appearance_mode_event(self, new_appearance_mode):
         CTk.set_appearance_mode(new_appearance_mode)
 
-
-
-    def slider_event(self):
-        pass
+    def slider_event(self, value):
+        self.password_length_entry.delete(0, "end")
+        self.password_length_entry.insert(0,int(value))
     def set_password(self):
         pass
 if __name__ =="__main__":
