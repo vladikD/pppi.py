@@ -37,6 +37,11 @@ class App(CTk.CTk):
                                          onvalue=digits, offvalue="")
         self.cb_digits.grid(row=2, column=0, padx=10)
 
+        self.cb_lower_var = tkinter.StringVar()
+        self.cb_lower = CTk.CTkCheckBox(master=self.setting_frame, text="a-z", variable=self.cb_lower_var,
+                                        onvalue=ascii_lowercase, offvalue="")
+        self.cb_lower.grid(row=2, column=1)
+
 
 
     def slider_event(self):
