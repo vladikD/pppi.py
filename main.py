@@ -1,5 +1,6 @@
 import tkinter
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
+from PIL import Image
 
 import customtkinter as CTk
 import password
@@ -13,11 +14,15 @@ class App(CTk.CTk):
         self.title("PasswordGenerator")
         self.resizable(False, False)
 
+        self.logo = CTk.CTkImage(dark_image=Image.open("logo.png"), size=(460,150))
+        self.logo_label = CTk.CTkLabel(master=self, text="", image=self.logo)
+        self.logo_label.grid(row=0, column=0)
+
         self.password_frame = CTk.CTkFrame(master=self, fg_color="transparent")
-        self.password_frame.grid(row=1, column=0, padx=(20, 20), sticky="nsew")
+        self.password_frame.grid(row=1, column=0, padx=(30, 30), pady=(10,10), sticky="nsew")
 
         self.entry_password = CTk.CTkEntry(master=self.password_frame, width=300)
-        self.entry_password.grid(row=0, column=0, padx=(0, 20))
+        self.entry_password.grid(row=0, column=0, padx=(0,20))
 
         self.btn_generate = CTk.CTkButton(master=self.password_frame, text="Generate", width=100,
                                           command=self.set_password)
@@ -62,6 +67,7 @@ class App(CTk.CTk):
         self.password_length_slider.set(12)
         self.password_length_entry.insert(0,12)
         self.appearance_mode_option_menu.set("System")
+
 
     def change_appearance_mode_event(self, new_appearance_mode):
         CTk.set_appearance_mode(new_appearance_mode)
