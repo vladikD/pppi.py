@@ -64,6 +64,11 @@ class App(CTk.CTk):
     def slider_event(self, value):
         self.password_length_entry.delete(0, "end")
         self.password_length_entry.insert(0,int(value))
+
+    def get_characters(self):
+        chars = "".join(self.cb_digits_var.get() + self.cb_lower_var.get() + self.cb_upper_var.get() +
+                       self.cb_symbol_var.get())
+        return chars
     def set_password(self):
         pass
 if __name__ =="__main__":
