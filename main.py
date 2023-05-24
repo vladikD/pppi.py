@@ -17,6 +17,10 @@ class App(CTk.CTk):
 
         self.entry_password = CTk.CTkEntry(master=self.password_frame, width=300)
         self.entry_password.grid(row=0, column=0, padx=(0, 20))
+
+        self.btn_generate = CTk.CTkButton(master=self.password_frame, text="Generate", width=100,
+                                          command=self.set_password)
+        self.btn_generate.grid(row=0, column=1)
     def set_password(self):
         pass
 if __name__ =="__main__":
