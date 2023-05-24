@@ -42,6 +42,11 @@ class App(CTk.CTk):
                                         onvalue=ascii_lowercase, offvalue="")
         self.cb_lower.grid(row=2, column=1)
 
+        self.cb_upper_var = tkinter.StringVar()
+        self.cb_upper = CTk.CTkCheckBox(master=self.setting_frame, text="A-Z", variable=self.cb_upper_var,
+                                        onvalue=ascii_uppercase, offvalue="")
+        self.cb_upper.grid(row=2, column=2)
+
 
 
     def slider_event(self):
