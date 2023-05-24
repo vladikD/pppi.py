@@ -2,6 +2,7 @@ import tkinter
 from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 
 import customtkinter as CTk
+import password
 
 
 class App(CTk.CTk):
@@ -70,7 +71,9 @@ class App(CTk.CTk):
                        self.cb_symbol_var.get())
         return chars
     def set_password(self):
-        pass
+        self.entry_password.delete(0, "end")
+        self.entry_password.insert(0, password.create_new(length=int(self.password_length_slider.get()),
+                                                          characters=self.get_characters()))
 if __name__ =="__main__":
     app = App()
     app.mainloop()
