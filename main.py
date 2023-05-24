@@ -24,6 +24,13 @@ class App(CTk.CTk):
 
         self.setting_frame = CTk.CTkFrame(master=self)
         self.setting_frame.grid(row=2, column=0, padx=(20, 20), pady=(20, 0), sticky="nsew")
+
+        self.password_length_slider = CTk.CTkSlider(master=self.setting_frame, from_=0, to=100, number_of_steps=100,
+                                                    command=self.slider_event)
+        self.password_length_slider.grid(row=1, column=0, columnspan=3, pady=(20, 20), sticky="ew")
+
+    def slider_event(self):
+        pass
     def set_password(self):
         pass
 if __name__ =="__main__":
