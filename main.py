@@ -32,6 +32,11 @@ class App(CTk.CTk):
         self.password_length_entry = CTk.CTkEntry(master=self.setting_frame, width=50)
         self.password_length_entry.grid(row=1, column=3, padx=(20, 10), sticky="we")
 
+        self.cb_digits_var = tkinter.StringVar()
+        self.cb_digits = CTk.CTkCheckBox(master=self.setting_frame, text="0-9", variable=self.cb_digits_var,
+                                         onvalue=digits, offvalue="")
+        self.cb_digits.grid(row=2, column=0, padx=10)
+
 
 
     def slider_event(self):
